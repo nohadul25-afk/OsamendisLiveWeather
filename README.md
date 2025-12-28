@@ -1,0 +1,2 @@
+# OsamendisLiveWeather
+Only for Osamendi.
