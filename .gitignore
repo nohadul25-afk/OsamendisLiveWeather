@@ -1,14 +1,7 @@
-
-# Secrets
-*.keystore
-*.jks
-local.properties
-
-# Gradle cache
 .gradle/
-gradle/caches/
-gradle/lib/
-
-# Build
-/build
-/app/build
+build/
+app/build/
+local.properties
+*.jks
+*.keystore
+*.log
