@@ -1,0 +1,29 @@
+name: Android APK Build
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - run: chmod +x gradlew
+
+      - name: Build APK
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+        run: ./gradlew assembleRelease
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: OsamendisLiveWeather
+          path: app/build/outputs/apk/release/app-release.apk
